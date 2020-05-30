@@ -12,7 +12,7 @@ public class Main{
 	public static void main(String[] args)throws Throwable{
 		if(!DOM.isInitialized()){
 			//DOM is not initialized
-			JVMServer.startThisJar(8081, false);
+			JVMServer.startThisJar(8080, false);
 			return;
 		}
 		else DOMMain.main(args);
