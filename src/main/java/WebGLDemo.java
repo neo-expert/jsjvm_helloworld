@@ -2,7 +2,7 @@ import js.*;
 import js.dom.*;
 import js.webgl.*;
 
-public class MainGL implements Runnable{
+public class WebGLDemo implements Runnable{
 	float xrot=0;
 	float yrot=0;
 	float[] pMatrix;
@@ -15,19 +15,18 @@ public class MainGL implements Runnable{
 	int vertexColor;
 	Object projectionMatrix;
 	Object modelViewMatrix;
-	private GL gl;
-	public MainGL(){
+	private final GL gl;
+	public WebGLDemo(){
 		DOMElement canvas=DOM.createElement("canvas");
 		DOMElement body=DOM.getElementById("body");
 		body.appendChild(canvas);
 		gl=new GL(canvas);
 	}
 	public static void main(String[] args){
-		new MainGL().startWEBGL();
-		Console.log("before eventloop");
+		new WebGLDemo().startWEBGL();
 	}
 
-	public void drawScene(GL hl){
+	public void drawScene(GL gl){
 		gl.clearDepth(1.0f);                 // Clear everything
 
 		// Clear the canvas before we start drawing on it.
